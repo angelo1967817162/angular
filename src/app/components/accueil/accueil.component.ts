@@ -5,7 +5,7 @@ import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {
   MatAutocomplete,
   MatAutocompleteOrigin,
-  MatAutocompleteTrigger,
+  MatAutocompleteTrigger, MatOptgroup,
   MatOption
 } from '@angular/material/autocomplete';
 import {AsyncPipe} from '@angular/common';
@@ -26,7 +26,8 @@ import {MatInput} from '@angular/material/input';
     MatAnchor,
     RouterLink,
     MatInput,
-    MatAutocompleteOrigin
+    MatAutocompleteOrigin,
+    MatOptgroup
   ],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.css'
@@ -35,6 +36,7 @@ export class AccueilComponent {
   myControl = new FormControl('');
   options: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
   filteredOptions: Observable<string[]>;
+
 
   constructor() {
     this.filteredOptions = this.myControl.valueChanges.pipe(

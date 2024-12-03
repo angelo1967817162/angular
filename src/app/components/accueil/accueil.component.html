@@ -8,26 +8,30 @@
   <a mat-button routerLink="/infos">Infos utiles</a>
 </nav>
 <div class="search-container">
-  <div class="custom-wrapper-example" matAutocompleteOrigin #origin="matAutocompleteOrigin">
-    <input
-      matInput
-      [formControl]="myControl"
-      [matAutocomplete]="auto"
-      [matAutocompleteConnectedTo]="origin">
-  </div>
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-      {{ option }}
-    </mat-option>
-  </mat-autocomplete>
+
 
 </div>
 <div class="content">
   <div class="left">
     <h2>Search</h2>
-    <mat-form-field>
-      <input matInput placeholder="Rechercher" />
-    </mat-form-field>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+
+        <input type="text"
+               placeholder="Rechercher"
+               aria-label="Number"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          @for (option of filteredOptions | async; track option) {
+            <mat-option [value]="option">{{option}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+
+
   </div>
   <div class="right">
     <h2>Cours</h2>
