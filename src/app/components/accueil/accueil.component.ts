@@ -34,7 +34,7 @@ import {MatInput} from '@angular/material/input';
 })
 export class AccueilComponent {
   myControl = new FormControl('');
-  options: string[] = ['Option 1', 'Option 2', 'Option 3', 'Option 4'];
+  options: string[] = ['cours par âge ', 'par date ', 'Option 3', 'Option 4'];
   filteredOptions: Observable<string[]>;
 
 
