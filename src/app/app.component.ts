@@ -17,8 +17,14 @@ import {AuthService} from './services/auth.service';
 export class AppComponent {
   title = 'Angelo';
   date = new Date();
+  cours :string[]=[];
   constructor(private auth: AuthService, private http: HttpClient, private router: Router) {
+    this.loadCours()
   }
   authenticated() { return this.auth.authenticated; }
   logout(){this.auth.logout();}
+  private loadCours(): void {
+    this.http.get<string[]>('http://localhost:8080/cours')}
+
+
 }
