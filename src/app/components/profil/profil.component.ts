@@ -24,5 +24,14 @@ import {MatInput} from '@angular/material/input';
   styleUrl: './profil.component.css'
 })
 export class ProfilComponent {
+  user: any;
 
+  onFileSelected($event: Event) {
+
+  }
+
+  onSubmit() {
+
+  }
 }
+
