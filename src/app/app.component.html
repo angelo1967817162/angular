@@ -19,12 +19,22 @@
 
 
       </mat-list-item>
+      <div [hidden]="!authenticated()">
       <mat-list-item>
         <a routerLink="/profil">
           <mat-icon>Mon profil</mat-icon>
           <span>Profil</span>
         </a>
       </mat-list-item>
+      </div>
+      <div [hidden]="!authenticated()">
+      <mat-list-item>
+        <a routerLink="/inscriptions">
+          <mat-icon>MesInscriptions</mat-icon>
+          <span>Mes Inscriptions</span>
+        </a>
+      </mat-list-item>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
 

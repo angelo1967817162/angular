@@ -7,6 +7,7 @@ import {UserEditComponent} from './components/user/user-edit/user-edit.component
 import {AccueilComponent} from './components/accueil/accueil.component';
 import {ProfilComponent} from './components/profil/profil.component';
 import {CoursViewComponent} from './components/accueil/cours-view/cours-view.component';
+import {InscriptionsComponent} from './components/inscription/inscriptions.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
@@ -41,5 +42,11 @@ export const routes: Routes = [
     path: 'profil',
     title: 'Mon profil',
     component: ProfilComponent,
+  },
+
+  {
+    path: 'inscriptions',
+    title: 'Mes inscriptions',
+    component: InscriptionsComponent,
   },
 ];
