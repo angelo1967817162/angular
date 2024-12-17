@@ -16,7 +16,7 @@ export class AuthService {
       'Content-Type': 'application/json',
       'Authorization': 'Basic ' + btoa(username + ':' + password)
     });
-    this.http.get(`${this.baseUrl}/tatoueur`, { headers:this.headers }).subscribe({
+    this.http.get(`${this.baseUrl}/cours`, { headers:this.headers }).subscribe({
       next: (response) => {
         this.authenticated=true;
         this.router.navigate(['/']);
