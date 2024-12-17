@@ -6,10 +6,10 @@ import {Tatoueur} from '../../../models/tatoueur.model';
   selector: 'app-tatoueur-view',
   standalone: true,
   imports: [ RouterLink],
-  templateUrl: './tatoueur-view.component.html',
-  styleUrl: './tatoueur-view.component.css'
+  templateUrl: './user-view.component.html',
+  styleUrl: './user-view.component.css'
 })
-export class TatoueurViewComponent {
+export class UserViewComponent {
   tatoueur!: Tatoueur;
 
   constructor(private tatoueurService: TatoueurService, private route: ActivatedRoute) {

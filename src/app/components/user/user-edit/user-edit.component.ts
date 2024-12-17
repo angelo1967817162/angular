@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {TatoueurService} from '../../../services/tatoueur.service';
 import {ActivatedRoute, Router, RouterLink, RouterOutlet} from '@angular/router';
 import {Tatoueur} from '../../../models/tatoueur.model';
-import {TatoueurComponent} from '../tatoueur.component';
+import {UserComponent} from '../user.component';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatError, MatFormField, MatLabel} from '@angular/material/form-field';
 import {MatButton} from '@angular/material/button';
@@ -12,10 +12,10 @@ import {MatInput} from '@angular/material/input';
   standalone: true,
   imports: [RouterLink, ReactiveFormsModule, MatError, MatButton, MatFormField, MatInput,
     MatLabel],
-  templateUrl: './tatoueur-edit.component.html',
-  styleUrl: './tatoueur-edit.component.css'
+  templateUrl: './user-edit.component.html',
+  styleUrl: './user-edit.component.css'
 })
-export class TatoueurEditComponent {
+export class UserEditComponent {
   id!:number;
   tatoueur!:Tatoueur;
   form!: FormGroup;
