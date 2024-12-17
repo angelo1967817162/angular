@@ -19,4 +19,9 @@ export class CoursService {
     let cours = this.http.get<Cours[]>(this.apiUrl);
     return cours;
   }
+
+  findById(id: number): Observable<any> {
+    return this.http.get(this.apiUrl + '/' + id)
+  }
+
 }
