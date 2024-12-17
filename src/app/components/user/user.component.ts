@@ -19,10 +19,10 @@ import {NgIf} from '@angular/common';
   imports: [RouterOutlet, RouterLink, MatTable, MatColumnDef, MatHeaderCell, MatCell, MatAnchor,
     MatButton, MatHeaderRow, MatRow, MatRowDef, MatHeaderRowDef, MatCellDef, MatHeaderCellDef,
     NgIf],
-  templateUrl: './tatoueur.component.html',
-  styleUrl: './tatoueur.component.css'
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css'
 })
-export class TatoueurComponent implements OnInit {
+export class UserComponent implements OnInit {
 //Variable de classe qui contiendra notre tableau de tatoueurs
   tatoueurs: Tatoueur[] = [];
   displayedColumns: string[] = ['nom', 'style'];

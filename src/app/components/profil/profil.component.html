@@ -21,35 +21,44 @@
   </mat-form-field>
 </section>
 
-<section>
-  <mat-form-field appearance="outline" >
-    <mat-label>Date de naissance</mat-label>
-    <input matInput type="text" formControlName="username">
-  </mat-form-field>
-</section>
-
-<section>
-  <mat-form-field appearance="outline" >
-    <mat-label>Email</mat-label>
-    <input matInput type="text" formControlName="username">
-  </mat-form-field>
-</section>
-
-
-<section>
-  <mat-form-field appearance="outline" >
-    <mat-label>Telephone</mat-label>
-    <input matInput type="text" formControlName="username">
-  </mat-form-field>
-</section>
 
 <section>
   <a mat-raised-button href="" target="_blank">quotient familial</a>
 
 </section>
-_______________________
 
 <section> <a mat-raised-button href="" target="_blank">Modifier mon profil</a></section>
 
-_______________________
+
+
+            profil
+<div class="profile-form">
+  <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+
+    <section>
+    <label for="name">Nom :</label>
+    <input type="text" id="name" [(ngModel)]="user.name" name="name" required />
+    </section>
+
+
+    <section>
+    <label for="email">Email :</label>
+    <input type="email" id="email" [(ngModel)]="user.email" name="email" required />
+    </section>
+
+    <section>
+    <label for="phone">Téléphone :</label>
+    <input type="tel" id="phone" [(ngModel)]="user.phone" name="phone" />
+    </section>
+
+    <section>
+    <label for="avatar">Photo de Profil :</label>
+    <input type="file" id="avatar" (change)="onFileSelected($event)" />
+    </section>
+
+    <section>
+    <button type="submit" [disabled]="!profileForm.form.valid">Mettre à jour</button>
+    </section>
+  </form>
+</div>
 

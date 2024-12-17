@@ -10,10 +10,10 @@ import {TatoueurService} from '../../../services/tatoueur.service';
   standalone: true,
   imports: [RouterOutlet, RouterLink, ReactiveFormsModule, MatError, MatButton, MatFormField,
     MatInput, MatLabel],
-  templateUrl: './tatoueur-create.component.html',
-  styleUrl: './tatoueur-create.component.css'
+  templateUrl: './user-create.component.html',
+  styleUrl: './user-create.component.css'
 })
-export class TatoueurCreateComponent {
+export class UserCreateComponent {
   form!: FormGroup;
   constructor(private tatoueurService: TatoueurService, private router: Router ) { }
   ngOnInit(): void {
