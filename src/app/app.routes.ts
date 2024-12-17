@@ -6,6 +6,7 @@ import {TatoueurCreateComponent} from './components/tatoueur/tatoueur-create/tat
 import {TatoueurEditComponent} from './components/tatoueur/tatoueur-edit/tatoueur-edit.component';
 import {AccueilComponent} from './components/accueil/accueil.component';
 import {ProfilComponent} from './components/profil/profil.component';
+import {CoursViewComponent} from './components/accueil/cours-view/cours-view.component';
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
   {
@@ -14,8 +15,8 @@ export const routes: Routes = [
     component: TatoueurComponent,
   },
   {
-    path: 'tatoueur/:tatoueurId/view',
-    component: TatoueurViewComponent
+    path: 'cours/:coursId/view',
+    component: CoursViewComponent
   },
   {
     path: 'tatoueur/create',

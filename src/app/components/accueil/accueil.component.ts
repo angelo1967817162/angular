@@ -8,7 +8,7 @@ import {
   MatAutocompleteTrigger, MatOptgroup,
   MatOption
 } from '@angular/material/autocomplete';
-import {AsyncPipe, DatePipe} from '@angular/common';
+import {AsyncPipe, DatePipe, NgIf} from '@angular/common';
 import {MatAnchor, MatButton} from '@angular/material/button';
 import {RouterLink} from '@angular/router';
 import {MatInput} from '@angular/material/input';
@@ -16,6 +16,16 @@ import {CoursService} from '../../services/cours.service';
 import {Tatoueur} from '../../models/tatoueur.model';
 import {TatoueurService} from '../../services/tatoueur.service';
 import {Cours} from '../../models/cours.model';
+import {
+  MatCell,
+  MatCellDef,
+  MatColumnDef,
+  MatHeaderCell,
+  MatHeaderCellDef, MatHeaderRow,
+  MatHeaderRowDef, MatRow, MatRowDef,
+  MatTable
+} from '@angular/material/table';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-accueil',
@@ -32,7 +42,18 @@ import {Cours} from '../../models/cours.model';
     MatInput,
     MatAutocompleteOrigin,
     MatOptgroup,
-    DatePipe
+    DatePipe,
+    MatTable,
+    MatColumnDef,
+    MatHeaderCell,
+    MatCell,
+    MatCellDef,
+    MatHeaderCellDef,
+    NgIf,
+    MatHeaderRowDef,
+    MatRowDef,
+    MatHeaderRow,
+    MatRow
   ],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.css'
@@ -42,12 +63,10 @@ export class AccueilComponent implements OnInit{
   options: string[] = ['cours par âge ', 'par date ', 'Option 3', 'Option 4'];
   filteredOptions: Observable<string[]>;
   cours: Cours[] = [];
-  displayedColumns: string[] = ['nom', 'style'];
+  displayedColumns: string[] = ['nom', 'description', 'action'];
 
 
-
-
-  constructor(private coursService: CoursService) {
+  constructor(private coursService: CoursService,private auth: AuthService) {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value || ''))
@@ -55,16 +74,18 @@ export class AccueilComponent implements OnInit{
 
   }
 
+  authenticated() { return this.auth.authenticated; }
+
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
   ngOnInit():void{
-//Récupère les données du tatoueurService.
     this.coursService.getCours().subscribe((data:Cours[])=> {
-//Mets les données dans notre variable de classe tatoueurs
       this.cours = data;
     });
   }
+
+
 
 }
