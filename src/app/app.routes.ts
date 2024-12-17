@@ -6,24 +6,29 @@ import {UserCreateComponent} from './components/user/user-create/user-create.com
 import {UserEditComponent} from './components/user/user-edit/user-edit.component';
 import {AccueilComponent} from './components/accueil/accueil.component';
 import {ProfilComponent} from './components/profil/profil.component';
+import {CoursViewComponent} from './components/accueil/cours-view/cours-view.component';
 
 export const routes: Routes = [
   { path: '', component: AccueilComponent },
   {
-    path: 'tatoueur',
+    path: 'user',
     title: 'Nos tatoueurs',
     component: UserComponent,
   },
   {
-    path: 'tatoueur/:tatoueurId/view',
+    path: 'cours/:coursId/view',
+    component: CoursViewComponent
+  },
+  {
+    path: 'user/:userId/view',
     component: UserViewComponent
   },
   {
-    path: 'tatoueur/create',
+    path: 'user/create',
     component: UserCreateComponent
   },
   {
-    path: 'tatoueur/:tatoueurId/edit',
+    path: 'user/:userId/edit',
     component: UserEditComponent
   },
   {
